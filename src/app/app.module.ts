@@ -5,11 +5,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MyJarComponent } from './my-jar/my-jar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { GratitudeComponent } from './gratitude/gratitude.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MyJarComponent
+    MyJarComponent,
+    GratitudeComponent
   ],
   imports: [
     BrowserModule,
