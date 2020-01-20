@@ -1,7 +1,5 @@
-<p>my-jar works!</p>
 
-
-<div class = "gratitude" *ngFor = "let grat of mockGrats">
+<div (click)="toIndividualGratitude(grat.IdNumber)" class = "gratitude" *ngFor = "let grat of mockGrats">
     <p>{{grat.Description}} <p>
 <li>{{grat.Owner}}</li>
 

@@ -8,10 +8,9 @@ import {mockGrats} from '../mockdata/mock-grats'
 })
 export class GratService {
 
-  constructor() { }
-
+  constructor() {}
   public getAllGrats(): Observable<grat[]> {
-  
    return of(mockGrats); 
   }
+
 }

@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {GratService} from '../common/services/grat.service'; 
 import {grat} from '../common/models/grat'; 
-import {mockGrats} from '../common/mockdata/mock-grats'; 
+import { Router } from '@angular/router';
+import { RoutingConstants } from '../common/constants/routing-constants';
+
 
 @Component({
   selector: 'app-my-jar',
@@ -10,21 +12,22 @@ import {mockGrats} from '../common/mockdata/mock-grats';
 })
 export class MyJarComponent implements OnInit {
 
-constructor(private mockGratService: GratService) { }
+constructor(private mockGratService: GratService, private router: Router) { }
  mockGrats: grat[]; 
   ngOnInit() { 
-    console.log("hello world"); 
     this.getAllGrats(); 
-    console.log("mockgrats: ",mockGrats); 
-   
   }
 
   getAllGrats() {
     this.mockGratService.getAllGrats().subscribe(grats => {
       this.mockGrats = grats; 
-      console.log("mockgrats: ", mockGrats); 
-    }) 
-    
+    })  
   }
+
+  toIndividualGratitude(id: number) {
+      this.router.navigate([`${RoutingConstants.Gratitude}/`+id]);
+  }
+
+
 
 }
